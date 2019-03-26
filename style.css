@@ -1,0 +1,99 @@
+body {
+    color: #fff;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: url(https://dl.dropboxusercontent.com/u/257308/jessica-jones-wallpaper.jpg);
+  }
+  .site-wraper {
+    max-width: 30em;
+    margin: 1em auto;
+    padding: 1em;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.25;
+  }
+  h1 {
+    color: #ccc;
+  }
+  blockquote {
+    margin: 1em 0em 3em;
+    min-height: 3em;
+    position: relative;
+  }
+  blockquote .blockquote-text {
+    margin-bottom: 0.5em;
+    position: absolute;
+    bottom: 100%;
+  }
+  blockquote span {
+    font-family: 'Nixie One', cursive;
+    background: #000;
+    display: inline;
+    font-size: 2em;
+    box-shadow: -6px -3px 0 #000, -6px 5px 0 #000, 6px 5px 0 #000, 6px -3px 0 #000;
+    transform: scale(1);
+    transition: opacity ease-in-out 0.15s, transform ease-in 0.15s;
+  }
+  blockquote .blockquote-cite {
+    display: block;
+    margin-top: 14em;
+    text-align: right;
+  }
+  blockquote cite {
+    background: #000;
+    box-shadow: 0 0 0 8px #000;
+    transform: scale(1);
+    transition: opacity ease-in-out 0.15s, transform ease-in 0.15s;
+  }
+  blockquote cite:before {
+    content: "-";
+  }
+  blockquote .hide {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+  .btn {
+    color: #333;
+    background-color: #fff;
+    display: inline-block;
+    padding: 8px 14px;
+    margin-bottom: 6px;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: none;
+    transition: background-color ease-in-out 0.15s;
+  }
+  .btn:hover {
+    color: #333;
+    background-color: #b5fbb5;
+    border-color: #adadad;
+  }
+  .btn-tweet:hover {
+    color: #333;
+    background-color: #55acee;
+    border-color: #adadad;
+  }
+  @media (max-width: 26em) {
+    .btn {
+      display: block;
+      width: 100%;
+    }
+    blockquote span {
+      font-size: 1.5em;
+    }
+  }
+  footer {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.25em 2em;
+    line-height: 2;
+    margin-top: 3em;
+    text-align: center;
+    color: #333;
+  }
+  footer a {
+    color: #333;
+  }
+  

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500|Nixie+One' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<div class="site-wraper">
+  <main>
+    <h1>Ramdom Restau: </h1>
+
+    <blockquote>
+      <div class="blockquote-text">
+        <span id="quote-text" class="hide">
+        </span>
+      </div>
+      <div class="blockquote-cite">
+        <cite id="quote-cite" class="hide">
+        </cite>
+      </div>
+    </blockquote>
+    
+    <div>
+      <button id="new-quote" class="btn"><i class="fa fa-refresh"></i> New quote please</button>
+      <!-- <button id="tweet-quote" class="btn btn-tweet"><i class="fa fa-twitter"></i> Tweet this quote</button> -->
+    </div>
+    
+  </main>
+  <footer>
+    
+  </footer>
+</div>
+<script>
+$(document).ready(function() {
+
+var quoteText = $("#quote-text");
+var quoteTextStr = "";
+var quoteCite = $("#quote-cite");
+var quoteCiteStr = "";
+var newQuoteBtn = $("#new-quote");
+var tweetQuoteBtn = $("#tweet-quote");
+var quotes = [
+  ["pause saveur"],
+  ["coeur de blé"],
+  ["Mroc"],
+  ["La boîte noire"],
+  ["Discours"],
+  ["Ninkasi"],
+  ["SuperLent"],
+  ["L'inattendu"],
+  ["L'argentin"],
+  ["Le petit ogre"],
+  ["DejBox"],
+];
+// Should add some more quotes
+
+
+// Generate a random quote from the array
+function newQuote() {
+  
+  // Get random
+  function randomizer() {     
+    return Math.floor(Math.random() * (quotes.length - 1 - 0 + 1)) + 0;
+  };
+  
+  var quote = quotes[randomizer()];
+  quoteTextStr = quote[0];
+  quoteCiteStr = quote[1];
+
+  setTimeout(function(){
+    quoteText.text(quoteTextStr);
+    quoteCite.text(quoteCiteStr);
+  },150);    
+
+  setTimeout(function(){
+    newQuoteBtn.children(".fa").removeClass("fa-spin");
+    quoteText.removeClass("hide");
+    quoteCite.removeClass("hide");
+  },600);    
+
+};
+
+
+// Kick off the first quote
+newQuote();
+
+
+// Clicking the Quote button
+newQuoteBtn.on("click", function(){
+  $(this).children(".fa").addClass("fa-spin");
+  quoteText.addClass("hide");
+  quoteCite.addClass("hide");
+  newQuote();
+});
+
+
+// Clicking the Quote button
+tweetQuoteBtn.on("click", function(){
+  var tweeText =  "\"" + quoteTextStr + '\" - ' + quoteCiteStr;
+  var tweetUrl = 'https://twitter.com/share?' + $.param({text: tweeText});
+  window.open(tweetUrl);
+});
+
+});
+</script>
+</body>
+</html>
